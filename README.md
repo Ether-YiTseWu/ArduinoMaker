@@ -1,5 +1,5 @@
 # ArduinoMaker
-Use Arduino to make interesting and creative works.
+Use Arduino to make interesting and creative works.  
 Project 01 : Intelligent monitoring system for boat  
 Project 02 : Remote control boat  
 Project 03 : Remote control car  
