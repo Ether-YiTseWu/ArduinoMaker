@@ -1,9 +1,9 @@
 #include <ESP8266WiFi.h>
 
-const char* ssid = "7139";
-const char* password = "24622192";
+const char* ssid = "73**";
+const char* password = "24******";
 const char* host = "maker.ifttt.com";
-const char* apiKey = "nIDv0_07W4rsM22hKHgZF";
+const char* apiKey = "nIDv0_0********hKH**F";
 
 int pin_water = 2;     //D4腳位
 int pin_battery = 15;  //D8腳位
@@ -17,7 +17,6 @@ void PINStatus() {
 void setup() {
   Serial.begin(9600);
 
-  Serial.println("SOS button integration with IFTTT");
   delay(100);
   pinMode(pin_water, OUTPUT);
   pinMode(pin_battery, OUTPUT);
@@ -30,7 +29,8 @@ void setup() {
 
   WiFi.begin(ssid, password);
 
-  while (WiFi.status() != WL_CONNECTED) {
+  while (WiFi.status() != WL_CONNECTED) 
+  {
     delay(500);
     Serial.print(".");
   }
@@ -43,13 +43,15 @@ void setup() {
 void loop() {
   Serial.println(digitalRead(pin_water));
 
-  if (digitalRead(pin_water) == HIGH) {
+  if (digitalRead(pin_water) == HIGH) 
+  {
     Serial.print("connecting to ");
     Serial.println(host);
 
     WiFiClient client;
     const int httpPort = 80;
-    if (!client.connect(host, httpPort)) {
+    if (!client.connect(host, httpPort)) 
+    {
       Serial.println("connection failed");
       return;
     }
@@ -66,13 +68,15 @@ void loop() {
                  "value1=" + PIN_state + "\r\n");
   }
  
-  if (digitalRead(pin_battery) == HIGH) {
+  if (digitalRead(pin_battery) == HIGH) 
+  {
     Serial.print("connecting to ");
     Serial.println(host);
 
     WiFiClient client;
     const int httpPort = 80;
-    if (!client.connect(host, httpPort)) {
+    if (!client.connect(host, httpPort)) 
+    {
       Serial.println("connection failed");
       return;
     }
